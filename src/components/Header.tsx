@@ -16,8 +16,8 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-3">
             <img 
-              src="./src/img/logo.png" 
-              alt="ПетрГУ"
+              src="/src/img/logo.png" 
+              alt="Лого"
               className="h-8"
             />
             <h1 className="hidden md:block text-xl font-semibold dark:text-gray-100 text-gray-900">
