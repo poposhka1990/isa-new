@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import LanguageSwitch from './LanguageSwitch';
-import assets from './src/assets.tsx';
+import assets from '/assets.tsx';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

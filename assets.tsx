@@ -1,4 +1,4 @@
-import logo from './src/img/logo.png'
+import logo from './src/img/logo.png';
 
 const assets = {
   logo
