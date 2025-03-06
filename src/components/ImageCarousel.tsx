@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const images = [
-  './src/img/gallery-1.jpg',
-  './src/img/gallery-2.jpg',
-  './src/img/gallery-3.jpg'
+  './src/img/gallery1.jpg',
+  './src/img/gallery2.jpg',
+  './src/img/gallery3.jpg'
 ];
 
 const ImageCarousel = () => {
