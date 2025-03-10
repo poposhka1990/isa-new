@@ -63,8 +63,8 @@ const Home = () => {
         ? `\n\nДобавить напоминание в календарь`
         : `\n\nAdd reminder to calendar`;
       
-      const resultRu = `Вам не нужно менять паспорт. Срок подачи документов на студенческую визу: с ${formatDisplayDate(deadlineStart)} по ${formatDisplayDate(deadlineEnd)}.${calendarLinkText}`;
-      const resultEn = `You don't need to reissue a new passport. Your deadline for applying for a student visa is from ${formatDisplayDate(deadlineStart)} to ${formatDisplayDate(deadlineEnd)}.${calendarLinkText}`;
+      const resultRu = `Ваш срок подачи документов на продление учебной визы: с ${formatDisplayDate(deadlineStart)} по ${formatDisplayDate(deadlineEnd)}.${calendarLinkText}`;
+      const resultEn = `Your deadline for applying for a student visa is from ${formatDisplayDate(deadlineStart)} to ${formatDisplayDate(deadlineEnd)}.${calendarLinkText}`;
       
       setCalculationResult(language === 'ru' ? resultRu : resultEn);
       setCalendarLink(generateCalendarLink(deadlineStart));
@@ -76,8 +76,8 @@ const Home = () => {
         ? `\n\nДобавить напоминание в календарь`
         : `\n\nAdd reminder to calendar`;
       
-      const resultRu = `Вам необходимо поменять паспорт. Если вы делаете это в России, срок подачи документов на студенческую визу: с ${formatDisplayDate(deadlineStart)} по ${formatDisplayDate(deadlineEnd)}. Если вы делаете это в своей стране, вам нужно будет запросить у нас новое приглашение.${calendarLinkText}`;
-      const resultEn = `You need to change your passport. If you do so in Russia, your deadline for applying for a student visa is from ${formatDisplayDate(deadlineStart)} to ${formatDisplayDate(deadlineEnd)}. If you do so in your home country, you will need to ask us for a new invitation.${calendarLinkText}`;
+      const resultRu = `Вам сначала необходимо поменять паспорт, поскольку срока его действия не достаточно для оформления учебной визы. Если вы делаете это в России, срок подачи документов на студенческую визу: с ${formatDisplayDate(deadlineStart)} по ${formatDisplayDate(deadlineEnd)}. Если вы делаете это в своей стране, вам нужно будет запросить у нас новое приглашение.${calendarLinkText}`;
+      const resultEn = `You need to change your passport before, since it is not effective enoght for a student visa. If you do so in Russia, your deadline for applying for a student visa is from ${formatDisplayDate(deadlineStart)} to ${formatDisplayDate(deadlineEnd)}. If you do so in your home country, you will need to ask us for a new invitation.${calendarLinkText}`;
       
       setCalculationResult(language === 'ru' ? resultRu : resultEn);
       setCalendarLink(generateCalendarLink(deadlineStart));
