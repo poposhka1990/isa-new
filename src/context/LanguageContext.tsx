@@ -34,6 +34,15 @@ const translations = {
 
     // Documents Page
     'documents.title': 'Основные миграционные документы',
+
+        // FAQ Page
+        'faq.contact.title': 'Задайте нам любой вопрос',
+        'faq.contact.description': 'Если вы не нашли ответ на свой вопрос, отправьте его нам напрямую',
+        'faq.contact.subject': 'Тема письма',
+        'faq.contact.subject.placeholder': 'Введите тему вашего вопроса',
+        'faq.contact.message': 'Ваш вопрос',
+        'faq.contact.message.placeholder': 'Опишите ваш вопрос подробно',
+        'faq.contact.send': 'Отправить вопрос',
     
     // Footer
     'footer.navigation': 'Навигация',
@@ -75,6 +84,15 @@ const translations = {
 
     // Documents Page
     'documents.title': 'Essential Migration Documents',
+
+        // FAQ Page
+        'faq.contact.title': 'Ask Us Any Question',
+        'faq.contact.description': 'If you haven\'t found an answer to your question, send it to us directly',
+        'faq.contact.subject': 'Email Subject',
+        'faq.contact.subject.placeholder': 'Enter your question subject',
+        'faq.contact.message': 'Your Question',
+        'faq.contact.message.placeholder': 'Describe your question in detail',
+        'faq.contact.send': 'Send Question',
     
     // Footer
     'footer.navigation': 'Navigation',

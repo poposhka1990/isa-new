@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Plus, Minus, ChevronRight } from 'lucide-react';
+import { Search, Plus, Minus, ChevronRight, Send, MessageCircle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import AnimatedCard from '../components/AnimatedCard';
 
@@ -118,7 +118,9 @@ const faqData: FAQSection[] = [
 const FAQ = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [expandedQuestions, setExpandedQuestions] = useState<Set<string>>(new Set());
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
 
   const toggleQuestion = (sectionId: string, questionIndex: number) => {
     const key = `${sectionId}-${questionIndex}`;
@@ -149,6 +151,12 @@ const FAQ = () => {
     }
   };
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const mailtoLink = `mailto:rvo@petrsu.ru?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+    window.location.href = mailtoLink;
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white">
@@ -171,6 +179,13 @@ const FAQ = () => {
               {section.title[language]}
             </button>
           ))}
+          <button
+            onClick={() => scrollToSection('contact-form')}
+            className="flex items-center px-4 py-2 rounded-lg bg-blue-100 dark:bg-blue-900/30 hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors text-blue-700 dark:text-blue-300"
+          >
+            <MessageCircle className="h-4 w-4 mr-2" />
+            {t('faq.contact.title')}
+          </button>
         </div>
       </div>
 
@@ -234,6 +249,55 @@ const FAQ = () => {
             </section>
           </AnimatedCard>
         ))}
+
+        {/* Contact Form */}
+        <AnimatedCard index={filteredSections.length}>
+          <section id="contact-form" className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 scroll-mt-20">
+            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+              {t('faq.contact.title')}
+            </h2>
+            <p className="text-gray-600 dark:text-gray-300 mb-6">
+              {t('faq.contact.description')}
+            </p>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  {t('faq.contact.subject')}
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  value={subject}
+                  onChange={(e) => setSubject(e.target.value)}
+                  placeholder={t('faq.contact.subject.placeholder')}
+                  className="w-full px-4 py-2 rounded-lg border dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  {t('faq.contact.message')}
+                </label>
+                <textarea
+                  id="message"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  placeholder={t('faq.contact.message.placeholder')}
+                  rows={4}
+                  className="w-full px-4 py-2 rounded-lg border dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              >
+                <Send className="h-5 w-5 mr-2" />
+                {t('faq.contact.send')}
+              </button>
+            </form>
+          </section>
+        </AnimatedCard>
       </div>
     </div>
   );
