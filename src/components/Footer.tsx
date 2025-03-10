@@ -72,11 +72,13 @@ const Footer = () => {
               <br />
               {t('footer.address')}
               <br />
-              <a href={`tel:+78142719634`}>
+              <a className="text-blue-400 hover:text-blue-300 transition-colors"
+              href={`tel:+78142719634`}>
                 {t('footer.number')}
               </a>
               <br />
-              <a href={`mailto:rvo@petrsu.ru`}>
+              <a className="text-blue-400 hover:text-blue-300 transition-colors" 
+              href={`mailto:rvo@petrsu.ru`}>
                 {t('footer.mail')}
               </a>
             </p>
