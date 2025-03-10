@@ -31,7 +31,7 @@ const Home = () => {
   };
 
   const generateCalendarLink = (date: Date) => {
-    const eventTitle = encodeURIComponent('Крайний срок подачи документов на визу / Visa Apply Deadline');
+    const eventTitle = encodeURIComponent('Подача документов на продление визы');
     const startDate = format(date, "yyyyMMdd");
     const endDate = format(date, "yyyyMMdd");
     const details = encodeURIComponent(language === 'ru' 
@@ -76,13 +76,12 @@ const Home = () => {
         ? `\n\nДобавить напоминание в календарь`
         : `\n\nAdd reminder to calendar`;
 
-      
       const rvpoLink = language === 'ru'
         ? 'Подробнее об этом читайте в разделе РВПО'
         : 'Read more about this in the RVPO section';
       
       const resultRu = `Вам сначала необходимо поменять паспорт, поскольку срока его действия не достаточно для оформления учебной визы. Если вы делаете это в России, срок подачи документов на студенческую визу: с ${formatDisplayDate(deadlineStart)} по ${formatDisplayDate(deadlineEnd)}. Если вы делаете это в своей стране, вам нужно будет запросить у нас новое приглашение.${calendarLinkText}.\n\n Второй вариант решения этой проблемы - подача документов на РВПО. Подробнее об этом читайте по ссылке: ${rvpoLink}`;
-      const resultEn = `You need to change your passport before, since it is not effective enoght for a student visa. If you do so in Russia, your deadline for applying for a student visa is from ${formatDisplayDate(deadlineStart)} to ${formatDisplayDate(deadlineEnd)}. If you do so in your home country, you will need to ask us for a new invitation.${calendarLinkText}.\n\nAnother solution to this problem is applying for RVPO. ${rvpoLink}`;
+      const resultEn = `You need to change your passport before, since it is not effective enough for a student visa. If you do so in Russia, your deadline for applying for a student visa is from ${formatDisplayDate(deadlineStart)} to ${formatDisplayDate(deadlineEnd)}. If you do so in your home country, you will need to ask us for a new invitation.${calendarLinkText}.\n\nAnother solution to this problem is applying for RVPO. <a>RVPO</a>`;
       
       setCalculationResult(language === 'ru' ? resultRu : resultEn);
       setCalendarLink(generateCalendarLink(deadlineStart));
