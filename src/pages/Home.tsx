@@ -280,7 +280,6 @@ const Home = () => {
       </motion.div>
 
       <div className="mb-12">
-        <ImageCarousel />
       </div>
       <LocationMap />
 

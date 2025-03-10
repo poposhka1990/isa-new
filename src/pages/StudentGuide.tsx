@@ -105,7 +105,7 @@ const StudentGuide = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8 dark:text-white text-gray-900">
+      <h1 className="text-3xl font-bold mb-8 text-center dark:text-white text-gray-900">
         {language === 'ru' ? 'Памятка иностранного студента' : 'International Student Guide'}
       </h1>
 
