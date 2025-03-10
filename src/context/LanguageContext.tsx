@@ -19,7 +19,7 @@ const translations = {
     // Home Page
     'home.title': 'Помощник иностранного студента',
     'home.subtitle': 'Добро пожаловать в систему поддержки иностранных студентов Петрозаводского государственного университета',
-    'home.visa': 'Помогает узнать дату подачи документов на продление визы и необходимость замены паспорта',
+    'home.visa': 'Рассчитать дату подачи документов на продление визы',
     'home.services': 'Сервисы',
     'home.services.desc': 'Доступ к основным сервисам для иностранных студентов',
     'home.documents': 'Документы',
@@ -60,7 +60,7 @@ const translations = {
     // Home Page
     'home.title': 'International Student Assistant',
     'home.subtitle': 'Welcome to the support system for international students of Petrozavodsk State University',
-    'home.visa': 'Helps to calculate the deadline for study visa applying and the neccesity to change your passport',
+    'home.visa': 'Calculate the deadline for study visa documents applying',
     'home.services': 'Services',
     'home.services.desc': 'Access to essential international student services',
     'home.documents': 'Documents',
